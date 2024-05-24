@@ -1,0 +1,96 @@
+@startuml
+
+interface Function {
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+abstract class BinaryFunction implements Function {
+    - left: Function
+    - right: Function
+}
+
+class Sum extends BinaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Sub extends BinaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Division extends BinaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Multiply extends BinaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Root extends BinaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Power extends BinaryFunction {
+    - function: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+abstract class UnaryFunction implements Function {
+    - function: Function
+}
+
+class Module extends UnaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Parenthesis extends UnaryFunction {
+    - left: Function
+    - right: Function
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Number implements Function {
+    - value: double
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+class Variable implements Function {
+    - name: String
+    + evaluate(Map<String, Double> parameters) : double
+    + print(): String
+    + getVariables(): Set<String>
+}
+
+}
+@enduml

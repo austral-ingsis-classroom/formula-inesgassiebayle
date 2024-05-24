@@ -6,6 +6,8 @@ import static org.hamcrest.Matchers.empty;
 
 import java.util.Collections;
 import java.util.List;
+
+import edu.austral.ingsis.math.binary.Sum;
 import org.junit.Test;
 
 public class ListVariablesTest {
@@ -13,7 +15,8 @@ public class ListVariablesTest {
   /** Case 1 + 6 */
   @Test
   public void shouldListVariablesFunction1() {
-    final List<String> result = Collections.emptyList();
+    Function function = new Sum(new Constant(1), new Constant(6));
+    final List<String> result = function.getVariables();
 
     assertThat(result, empty());
   }

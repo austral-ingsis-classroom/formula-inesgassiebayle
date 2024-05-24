@@ -9,6 +9,8 @@ interface Function {
 abstract class BinaryFunction implements Function {
     - left: Function
     - right: Function
+    + getRight(): Function
+    + getLeft(): Function
 }
 
 class Sum extends BinaryFunction {
@@ -60,6 +62,7 @@ class Power extends BinaryFunction {
 
 abstract class UnaryFunction implements Function {
     - function: Function
+    + getRight(): Function
 }
 
 class Module extends UnaryFunction {

@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+
 public class Constant implements Function {
   private final double value;
 
